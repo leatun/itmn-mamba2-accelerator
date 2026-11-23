@@ -1,0 +1,41 @@
+% Shared style of the RTL diagrams. Build one with: tectonic fig_x.tex
+\usepackage{tikz}
+\usetikzlibrary{arrows.meta,positioning,fit,calc,backgrounds,shapes.geometric}
+\usepackage[T1]{fontenc}
+\usepackage{lmodern}
+% opaque background, so the SVGs stay readable on dark pages
+\tikzset{every picture/.append style={show background rectangle,
+         background rectangle/.style={fill=white, draw=none}, inner frame sep=2pt}}
+\definecolor{inkA}{HTML}{0B0B0B}
+\definecolor{inkB}{HTML}{52514E}
+\definecolor{rule}{HTML}{C3C2B7}
+\definecolor{fillA}{HTML}{F0EFEC}
+\definecolor{fillPE}{HTML}{CDE2FB}
+\definecolor{fillRow}{HTML}{FBE0D3}
+\definecolor{fillMem}{HTML}{E5F4EC}
+\definecolor{fillCtl}{HTML}{FDF0C8}
+\definecolor{fillReg}{HTML}{F6C9A8}
+\definecolor{ctlink}{HTML}{8A6A00}
+\tikzset{
+  blk/.style={draw=inkB, line width=0.5pt, rounded corners=1.5pt, align=center, font=\scriptsize, inner sep=2pt},
+  pe/.style={blk, fill=fillPE},
+  row/.style={blk, fill=fillRow},
+  mem/.style={blk, fill=fillMem},
+  ctl/.style={blk, fill=fillCtl},
+  plain/.style={blk, fill=white},
+  grp/.style={draw=rule, line width=0.6pt, rounded corners=3pt, inner sep=4pt},
+  dgrp/.style={draw=inkB, dashed, line width=0.5pt, rounded corners=3pt, inner sep=4pt},
+  arr/.style={-{Stealth[length=3pt]}, line width=0.5pt, draw=inkB},
+  darr/.style={{Stealth[length=3pt]}-{Stealth[length=3pt]}, line width=0.5pt, draw=inkB},
+  carr/.style={-{Stealth[length=2.5pt]}, line width=0.4pt, draw=ctlink, densely dashed},
+  lbl/.style={font=\scriptsize, text=inkB, align=center},
+  tlbl/.style={font=\tiny, text=inkB, align=center},
+  clbl/.style={font=\tiny, text=ctlink, align=center},
+  opc/.style={circle, draw=inkB, fill=white, line width=0.5pt, minimum size=0.42cm, inner sep=0pt, font=\scriptsize},
+  mux/.style={trapezium, trapezium stretches=true, trapezium angle=70, draw=inkB, fill=fillA, line width=0.5pt, minimum height=0.38cm,
+              inner sep=1pt, font=\tiny, shape border rotate=180},
+  regbar/.style={draw=inkB, fill=fillReg, line width=0.5pt, minimum height=0.16cm, inner sep=0pt},
+}
+% bus width mark: \bw{coordinate}{width}
+\newcommand{\bw}[2]{\draw[line width=0.4pt, draw=inkB] ($(#1)+(-0.06,-0.06)$) -- ($(#1)+(0.06,0.06)$)
+  node[tlbl, anchor=west, inner sep=1pt] {#2};}

@@ -1,0 +1,23 @@
+# simulation
+work*/
+w[0-9]*/
+wfull_*/
+transcript
+*.wlf
+*.vstf
+modelsim.ini
+xsim.dir/
+.Xil/
+*.jou
+*.pb
+webtalk*
+# synthesis
+synth_reports_*/
+synth_kv260.log
+__pycache__/
+*.log
+iter_*_CongestedCLBsAndNets.txt
+w_*/
+
+# TikZ build output (docs/*.svg and *.png are the published figures)
+docs/src/*.pdf

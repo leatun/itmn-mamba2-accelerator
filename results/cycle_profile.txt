@@ -1,0 +1,15 @@
+config blk: total cycles of the T=8 mixer run (includes the one-off H_INIT) | steady-state per-t stage cycles (one cluster's view, H_INIT booked separately) | sum per t | pass
+S=1 psh=1 m2_n16_p32 bk0: 3760 cycles (470 per t) | RN=5 M1=196 M2=32 M6=101 GN=28 M8=76 barrier=15 (H_INIT once per block: 129) | 453 per t | 1 pass
+S=1 psh=1 m2_n16_p32 bk4: 9740 cycles (1217 per t) | RN=6 M1=636 M2=48 M6=173 GN=36 M8=274 barrier=12 (H_INIT once per block: 257) | 1185 per t | 1 pass
+S=2 psh=1 n32_p32 bk0: 4456 cycles (557 per t) | RN=5 M1=215 M2=36 M6=165 GN=28 M8=76 barrier=15 (H_INIT once per block: 129) | 540 per t | 1 pass
+S=2 psh=1 n32_p32 bk4: 11076 cycles (1384 per t) | RN=6 M1=671 M2=52 M6=301 GN=36 M8=274 barrier=12 (H_INIT once per block: 257) | 1352 per t | 1 pass
+S=4 psh=1 n64_p32 bk0: 5984 cycles (748 per t) | RN=5 M1=253 M2=44 M6=294 GN=28 M8=76 barrier=15 (H_INIT once per block: 257) | 715 per t | 1 pass
+S=4 psh=1 n64_p32 bk4: 14012 cycles (1751 per t) | RN=6 M1=741 M2=60 M6=558 GN=36 M8=274 barrier=12 (H_INIT once per block: 513) | 1687 per t | 1 pass
+S=8 psh=1 n128_p32 bk0: 9088 cycles (1136 per t) | RN=5 M1=329 M2=60 M6=558 GN=28 M8=76 barrier=15 (H_INIT once per block: 513) | 1071 per t | 1 pass
+S=8 psh=1 n128_p32 bk4: 19932 cycles (2491 per t) | RN=6 M1=881 M2=76 M6=1078 GN=36 M8=274 barrier=12 (H_INIT once per block: 1025) | 2363 per t | 1 pass
+S=1 psh=0 n16_p16 bk0: 3760 cycles (470 per t) | RN=5 M1=196 M2=32 M6=101 GN=28 M8=76 barrier=15 (H_INIT once per block: 129) | 453 per t | 1 pass
+S=1 psh=0 n16_p16 bk4: 9740 cycles (1217 per t) | RN=6 M1=636 M2=48 M6=173 GN=36 M8=274 barrier=12 (H_INIT once per block: 257) | 1185 per t | 1 pass
+S=1 psh=2 n16_p64 bk0: 3760 cycles (470 per t) | RN=5 M1=196 M2=32 M6=101 GN=28 M8=76 barrier=15 (H_INIT once per block: 129) | 453 per t | 1 pass
+S=1 psh=2 n16_p64 bk4: 9740 cycles (1217 per t) | RN=6 M1=636 M2=48 M6=173 GN=36 M8=274 barrier=12 (H_INIT once per block: 257) | 1185 per t | 1 pass
+S=8 psh=2 n128_p64 bk0: 9088 cycles (1136 per t) | RN=5 M1=329 M2=60 M6=558 GN=28 M8=76 barrier=15 (H_INIT once per block: 513) | 1071 per t | 1 pass
+S=8 psh=2 n128_p64 bk4: 19932 cycles (2491 per t) | RN=6 M1=881 M2=76 M6=1078 GN=36 M8=274 barrier=12 (H_INIT once per block: 1025) | 2363 per t | 1 pass
